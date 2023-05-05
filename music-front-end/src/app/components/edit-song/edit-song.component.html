@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Editar canción</h1>
+<div mat-dialog-content>
+    <form [formGroup]="songForm">
+        <mat-form-field>
+            <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Artist" formControlName="artist">
+        </mat-form-field>
+    </form>
+</div>
+<div>
+     <mat-dialog-actions>
+        <button mat-button (click)="cancel()">Cancelar</button>
+        <button mat-button (click)="save()">Guardar</button>
+     </mat-dialog-actions>
+</div>

@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <span>Music-App</span>
+    <span class="spacer"></span>
+    <div style="padding: 16px;">
+        <button mat-button routerLink="/home" routerLinkActive="active">Home</button>
+        <button mat-button routerLink="/songs" routerLinkActive="active">Songs</button>
+        <button mat-button routerLink="/playlists" routerLinkActive="active">Playlists</button>
+        <button mat-button routerLink="/contacto" routerLinkActive="active">Contacto</button>
+    </div>
+</mat-toolbar>
+
+<button mat-icon-button color="primary" routerLink="/add-song" style="margin: 4px;">
+    <mat-icon>add</mat-icon>
+</button>
+
+<mat-card class="example-card" *ngFor="let item of songsList">
+    <div style="margin: 4px;">
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>{{ item.artist }}</mat-card-subtitle>
+        <mat-card-content>
+            <p>Descripción: {{ item.playlistId }}</p>
+        </mat-card-content>
+
+        <button mat-icon-button color="warn" (click)="openDialog(item.id || undefined)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <!-- <button mat-icon-button (click)="addToPlaylist(item)">
+            <mat-icon>add</mat-icon>
+        </button> -->
+    </div>
+</mat-card>

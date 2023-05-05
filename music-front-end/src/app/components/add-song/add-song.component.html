@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <span>Music-App</span>
+    <span class="spacer"></span>
+    <div style="padding: 16px;">
+        <button mat-button routerLink="/home" routerLinkActive="active">Home</button>
+        <button mat-button routerLink="/songs" routerLinkActive="active">Songs</button>
+        <button mat-button routerLink="/playlists" routerLinkActive="active">Playlists</button>
+        <button mat-button routerLink="/contacto" routerLinkActive="active">Contacto</button>
+    </div>
+</mat-toolbar>
+
+<form (submit)="onSubmit()">
+    <label>
+        Título:
+        <input [(ngModel)]="newSong.title" name="title" required>
+    </label>
+    <label>
+        Artista:
+        <input [(ngModel)]="newSong.artist" name="artist" required>
+    </label>
+    <button type="submit">Agregar canción</button>
+</form>
